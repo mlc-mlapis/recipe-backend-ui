@@ -7,14 +7,12 @@ zerops:
         - npm run build
       deployFiles:
         - ./dist/recipe-backend-ui/browser/~/
+        - site.conf
     run:
-      base: static
+      base: nginx@latest
+      siteConfigPath: site.conf
       envVariables:
         API_URL: ${api_zeropsSubdomain}
-      routing:
-        redirects:
-          - from: /*
-            to: /index.html
       envReplace:
         target: ./
         delimiter: "%%"
