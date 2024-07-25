@@ -9,7 +9,7 @@ zerops:
         - ./dist/recipe-backend-ui/browser/~/
     run:
       base: nginx@latest
-      siteConfigPath: site.conf
+      siteConfigPath: x-site.conf
       envVariables:
         API_URL: ${api_zeropsSubdomain}
       envReplace:
